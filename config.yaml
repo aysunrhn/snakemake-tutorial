@@ -1,0 +1,7 @@
+input_file: "data/AB_NYC_2019.csv"
+cleaned_file: "output/cleaned_data.csv"
+summary_file: "output/summary.csv"
+visualizations:
+  price_distribution: "output/visualizations/price_distribution.png"
+  availability_by_neighborhood: "output/visualizations/availability_by_neighborhood.png"
+  reviews_per_month: "output/visualizations/reviews_per_month.png"

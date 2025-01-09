@@ -1,0 +1,4 @@
+output/visualizations/*
+output/cleaned_data.csv
+output/summary.csv
+.snakemake
