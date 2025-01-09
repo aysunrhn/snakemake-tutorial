@@ -1,0 +1,52 @@
+rule all:
+    input:
+        "output/visualizations/model_performance.png"
+
+rule preprocess_static:
+    input:
+        "data/winequality-red.csv"
+    output:
+        "output/X_train.csv",
+        "output/X_test.csv",
+        "output/y_train.csv",
+        "output/y_test.csv"
+    script:
+        "scripts/preprocess.py"
+
+checkpoint select_models:
+    input:
+        "output/X_train.csv"
+    output:
+        "output/selected_models.txt"
+    script:
+        "scripts/select_models.py"
+
+rule train:
+    input:
+        X_train="output/X_train.csv",
+        y_train="output/y_train.csv"
+    output:
+        "output/models/{model}.csv"
+    script:
+        "scripts/train.py"
+
+rule evaluate:
+    input:
+        models=lambda wildcards: expand(
+            "output/models/{model}.csv",
+            model=open(checkpoints.select_models.get().output[0]).read().strip().split()
+        ),
+        X_test="output/X_test.csv",
+        y_test="output/y_test.csv"
+    output:
+        "output/model_results.csv"
+    script:
+        "scripts/evaluate.py"
+
+rule visualize:
+    input:
+        "output/model_results.csv"
+    output:
+        "output/visualizations/model_performance.png"
+    script:
+        "scripts/visualize.py"
