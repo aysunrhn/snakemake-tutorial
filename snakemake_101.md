@@ -40,6 +40,7 @@ Just like Make, its goal is to produce a set of requested output files based on 
 ## Useful links
 - [Awesome pipeline repository](https://github.com/pditommaso/awesome-pipeline): a curated list of tools for creating pipelines
 - [The official Snakemake documentation](https://snakemake.readthedocs.io/en/stable/): an extensive documentation that includes in depth tutorials and edge cases.
+- [An Introduction to Snakemake with R for Economics](https://lachlandeer.github.io/snakemake-econ-r-tutorial/index.html)
 
 
 [^leipzig2017]: Leipzig, J. A review of bioinformatic pipeline frameworks. *Briefings in Bioinformatics*. 2017. 18 (3). https://doi.org/10.1093/bib/bbw020
