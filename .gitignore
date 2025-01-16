@@ -8,3 +8,6 @@ wine-tutorial/output/models
 wine-tutorial/output/*.csv
 wine-tutorial/output/*.txt
 wine-tutorial/.snakemake
+
+want.txt
+Snakefile

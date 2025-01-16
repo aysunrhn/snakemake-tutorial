@@ -1,0 +1,6 @@
+Building DAG of jobs...
+MissingInputException in rule preheat_oven in file /home/aurhan/Work/Snakemake tutorial/snakemake-tutorial/Snakefile, line 52:
+Missing input files for rule preheat_oven:
+    output: warm_oven.txt
+    affected files:
+        cold_oven.txt

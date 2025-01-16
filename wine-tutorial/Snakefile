@@ -24,7 +24,7 @@ checkpoint select_models:
 rule train:
     input:
         X_train="output/X_train.csv",
-        y_train="output/y_train.csv"
+        y_train="output/y_train.csv",
     output:
         "output/models/{model}.csv"
     script:
