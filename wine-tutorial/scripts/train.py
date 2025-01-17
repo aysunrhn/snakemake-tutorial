@@ -4,7 +4,8 @@ import os
 
 # Load preprocessed data
 X_train = pd.read_csv(snakemake.input[0])
-y_train = pd.read_csv(snakemake.input[1]).values.ravel()
+y_train = pd.read_csv(snakemake.input[1])
+# y_train = pd.read_csv(snakemake.input[1]).values.ravel()
 
 # Determine model type from wildcard
 model_type = snakemake.wildcards.model

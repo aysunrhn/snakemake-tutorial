@@ -1,5 +1,5 @@
 import pandas as pd
-from sklearn.metrics import mean_squared_error
+from sklearn.metrics import mean_squared_error, mean_absolute_error
 import os
 
 # Load test data
@@ -19,8 +19,8 @@ for model_file in snakemake.input.models:
     y_pred = X_test @ coef  # Perform the dot product between X_test and coefficients
 
     # Calculate Mean Squared Error (MSE)
-    mse = mean_squared_error(y_test, y_pred)
-    results[model_name] = mse
+    mae = mean_absolute_error(y_test, y_pred)
+    results[model_name] = mae
 
 # Save evaluation results
-pd.DataFrame.from_dict(results, orient="index", columns=["MSE"]).reset_index().rename(columns={"index": "Model"}).to_csv(snakemake.output[0], index=False)
+pd.DataFrame.from_dict(results, orient="index", columns=["MAE"]).reset_index().rename(columns={"index": "Model"}).to_csv(snakemake.output[0], index=False)

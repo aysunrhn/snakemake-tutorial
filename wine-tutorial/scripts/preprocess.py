@@ -12,18 +12,20 @@ data = data.dropna()
 X = data.iloc[:, :-1]  # Features (all columns except the last one)
 y = data.iloc[:, -1]   # Target variable (last column)
 
+# Split the data into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0)
+
 # Normalize the feature data
 scaler = StandardScaler()
-X_scaled = scaler.fit_transform(X)
+X_train_scaled = scaler.fit_transform(X_train)
+X_test_scaled = scaler.transform(X_test)
 
 # Convert scaled data back to a DataFrame
-X_scaled = pd.DataFrame(X_scaled, columns=X.columns)
-
-# Split the data into training and testing sets
-X_train, X_test, y_train, y_test = train_test_split(X_scaled, y, test_size=0.2, random_state=42)
+X_train_scaled = pd.DataFrame(X_train_scaled, columns=X.columns)
+X_test_scaled = pd.DataFrame(X_test_scaled, columns=X.columns)
 
 # Save the processed data to CSV files
-X_train.to_csv(snakemake.output[0], index=False)
-X_test.to_csv(snakemake.output[1], index=False)
+X_train_scaled.to_csv(snakemake.output[0], index=False)
+X_test_scaled.to_csv(snakemake.output[1], index=False)
 y_train.to_csv(snakemake.output[2], index=False)
 y_test.to_csv(snakemake.output[3], index=False)

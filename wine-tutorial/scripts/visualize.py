@@ -5,11 +5,11 @@ import matplotlib.pyplot as plt
 results_df = pd.read_csv(snakemake.input[0])
 
 # Create a bar chart for model performance
-plt.figure(figsize=(10, 6))
-plt.bar(results_df["Model"], results_df["MSE"], color="skyblue")
-plt.title("Model Performance (MSE)")
+plt.figure()
+plt.bar(results_df["Model"], results_df["MAE"], color="skyblue")
+plt.title("Model Performance (MAE)")
 plt.xlabel("Model")
-plt.ylabel("Mean Squared Error")
+plt.ylabel("Mean Absolute Error")
 plt.xticks(rotation=45)
 plt.tight_layout()
 

@@ -2,7 +2,7 @@ rule all:
     input:
         "output/visualizations/model_performance.png"
 
-rule preprocess_static:
+rule preprocess:
     input:
         "data/winequality-red.csv"
     output:
@@ -50,3 +50,12 @@ rule visualize:
         "output/visualizations/model_performance.png"
     script:
         "scripts/visualize.py"
+
+rule clean_output:
+    shell:
+        """
+        rm -rf output/*.csv
+        rm -rf output/selected_models.txt
+        rm -rf output/models/*
+        rm -rf output/visualizations/*
+        """
