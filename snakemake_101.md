@@ -25,8 +25,9 @@ Snakemake essentially builds on the implicit wildcard rule approach of Make, and
 Just like Make, its goal is to produce a set of requested output files based on predefined rules and steps. You can also think of it as cooking or baking.
 
 ### Noteworthy features of Snakemake
+- If Python and Make were to have a baby
 - You can describe workflows using a human readable, Python based language.
-- If some steps of your workflow have already been run, Snakemake can recognize that and avoid rerunning the same analyses.
+- It has built-in caching: if some steps of your workflow have already been run, Snakemake can recognize that and avoid rerunning the same analyses.
 - It can accommodate both serial and parallel jobs since each "work units" in a workflow can be run independently of one another.
 - It makes debugging easier since it keeps track of all files generated, you can identify which steps in your workflow have failed.
 - Integration with conda allows you to define conda environments for both the whole workflow and individual steps. 
@@ -35,7 +36,22 @@ Just like Make, its goal is to produce a set of requested output files based on 
 - It has an active user and developer base.
 
 ### Why not Airflow?
-Airflow has become the go-to tool for building data pipelines, it has started in Airbnb and was later adopted by the Apache project. Being backed by the Apache project, and a growing community of contributors, it's the most popular workflow manager in software engineering. Compared to Snakemake, it has a more complex syntax and architecture, and hence a steeper learning curve. Since workflows in Airflow are more complex in infrastructure, they are also more difficult to share between different environments. Unlike Snakemake, Airflow has limited support for running on HPC, or conda integration.
+Airflow has become the go-to tool for building data pipelines, it has started in Airbnb and was later adopted by the Apache project. Being backed by the Apache project, and a growing community of contributors, it's the most popular workflow manager in software engineering. 
+
+Pros:
+- The most popular choice of workflow management system in software engineering
+- Has a bigger community support and hence more detailed tutorials and documentation
+- More rich in features, especially enterprise integrations for industry
+- More production friendly
+
+Cons:
+- Has a complex infrastructure and a more steep learning curve
+- More difficult to share pipelines between different environments
+- Lacks native support for conda
+- Has a more convoluted approach to parallel computation
+- Limited support for basic cluster operations and cloud computing, except for Google Cloud and Astronomer 
+
+Compared to Snakemake, it has a more complex syntax and architecture, and hence a steeper learning curve. Since workflows in Airflow are more complex in infrastructure, they are also more difficult to share between different environments. Unlike Snakemake, Airflow has limited support for running on HPC, or conda integration.
 
 
 ## Useful links
