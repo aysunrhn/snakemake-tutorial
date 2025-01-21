@@ -4,7 +4,7 @@
 
 A workflow manager is a tool to develop computational workflows that are reproducible by aiding in setting up, performing and monitoring defined sequences of commands. It is a structured approach to keep track of the commands used to analyze data, including parameters.
 
-Bioinformatics field relies heavily on pipelines to analyze genomic data; usually you perform a sequence of analyses on several files. 
+Bioinformatics field relies heavily on pipelines to analyze genomic data; usually you perform a sequence of analyses on several files. Hence, there are many workflow managers niche to the field. But workflow management is a general need in many other applications as well. 
 
 ### Useful definitions
 - **Implicit framework:** the user defines rules or recipes for performing operations on files separately. It forces the users to think more carefully about filenames rather than about the process.
@@ -41,6 +41,8 @@ Just like Make, its goal is to produce a set of requested output files based on 
 - [Awesome pipeline repository](https://github.com/pditommaso/awesome-pipeline): a curated list of tools for creating pipelines
 - [The official Snakemake documentation](https://snakemake.readthedocs.io/en/stable/): an extensive documentation that includes in depth tutorials and edge cases.
 - [An Introduction to Snakemake with R for Economics](https://lachlandeer.github.io/snakemake-econ-r-tutorial/index.html)
+- [Sustainable data analysis with Snakemake](https://doi.org/10.12688/f1000research.29032.2): A general overview article about Snakemake published in F1000Research
+- [A review of bioinformatic pipeline frameworks.](https://doi.org/10.1093/bib/bbw020): A review article published in Briefings in Bionformatics, focused on Bionformatics pipelines
 
 
 [^leipzig2017]: Leipzig, J. A review of bioinformatic pipeline frameworks. *Briefings in Bioinformatics*. 2017. 18 (3). https://doi.org/10.1093/bib/bbw020
