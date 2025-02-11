@@ -26,7 +26,7 @@ plt.close()
 
 # 3. Reviews Per Month Visualization
 plt.figure(figsize=(8, 6))
-plt.bar(summary["neighbourhood_group"], summary["total_reviews"], color="lightgreen")
+plt.bar(summary["neighbourhood_group"], summary["total_reviews"], color="gray")
 plt.title("Total reviews by neighborhood group")
 plt.xlabel("Neighborhood group")
 plt.ylabel("Total reviews")
