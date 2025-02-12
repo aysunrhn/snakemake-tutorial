@@ -9,5 +9,7 @@ wine-tutorial/output/*.csv
 wine-tutorial/output/*.txt
 wine-tutorial/.snakemake
 
+notebook-tutorial/.snakemake
+
 want.txt
 Snakefile
