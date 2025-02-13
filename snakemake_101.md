@@ -69,6 +69,19 @@ There are 3 main reasons why bioinformatics workflows are different than those d
 3. Community support behind bioinformatics workflow managers and open source software
    - Field of bioinformatics has a strong emphasis on open science, reproducible and transparent research. All of which are achieved using workflow managers 
 
+### A summary of workflow management tools discussed
+
+| **Feature**                  | **Snakemake**                  | **Nextflow**                 | **Airflow**                  |
+|------------------------------|-------------------------------|-----------------------------|------------------------------|
+| **Target Audience**           | Scientists, researchers        | Bioinformaticians, scientists | Data engineers, DevOps        |
+| **Ease of Use**               | High                          | Medium                      | Low                          |
+| **Reproducibility Focus**     | Strong                        | Medium                      | Low                          |
+| **HPC Support**               | Excellent                     | Good                        | Minimal                      |
+| **Cloud-Native Support**      | Moderate                      | Strong                      | Excellent                    |
+| **Community**                 | Scientific community           | Bioinformatics              | Data engineering, cloud-native |
+
+
+
 > [!TIP] Reproducible research 
 > Snakemake is a good option to introduce researchers to. Airflow produces well defined production level workflows that are meant to be run continually, and hence Snakemake is much better suited for the needs of researchers who want to run reproducible analyses for a particular project or an appplication. 
 
